@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .texto{
+           
+            font-size: 30px;
+            margin-left: 670px;
+
+        }
+        #img1{
+            width: 300px;
+            height: 300px;
+            margin-top: 10px;
+            margin-left: 600px;
+            
+
+        }
+         #img2{
+            width: 300px;
+            height: 300px;
+            margin-top: 10px;
+            margin-left: 600px;
+            
+
+        }
+         #img3{
+            width: 300px;
+            height: 300px;
+            margin-top: 10px;
+            margin-left: 600px;
+            
+
+        }
+        button{
+            margin-left: 50px;
+            font-size: 20px;
+            background-color: rgb(255, 0, 0);
+            border-radius: 10px;
+        }
+        .botones{
+            margin-left: 550px;
+        }
+    </style>
+    <div class="texto">
+<p>pulsa adelante o atras </p>
+<p>camiseta 9 </p>
+<p hidden>camiseta 11 </p>
+<p hidden>camiseta 6 </p>
+
+</div>
+    <img src="img/9.jpg" alt="" id="img1" >
+    <img src="img/11.jpg" alt="" id="img2" hidden>
+    <img src="img/6.jpg" alt="" id="img3" hidden><br>
+    <div class="botones">
+    <button><<< atras</button>
+    <button>>>> adelante</button>
+    </div>
+    <script>
+        let camiseta9=document.getElementById("img1");
+        let camiseta11=document.getElementById("img2");
+        let camiseta6=document.getElementById("img3");
+        let texto9=document.querySelector(".texto p:nth-child(2)");
+        let texto11=document.querySelector(".texto p:nth-child(3)");
+        let texto6=document.querySelector(".texto p:nth-child(4)");
+        let botonAtras=document.querySelector(".botones button:nth-child(1)");
+        let botonAdelante=document.querySelector(".botones button:nth-child(2)");
+        let contador=0;
+
+        botonAdelante.addEventListener("click",function(){
+            contador++;
+            if(contador>2){
+                contador=0;
+            }
+            if(contador==0){
+                camiseta9.hidden=false;
+                camiseta11.hidden=true;
+                camiseta6.hidden=true;
+                texto9.hidden=false;
+                texto11.hidden=true;
+                texto6.hidden=true;
+            }
+            if(contador==1){
+                camiseta9.hidden=true;
+                camiseta11.hidden=false;
+                camiseta6.hidden=true;
+                texto9.hidden=true;
+                texto11.hidden=false;
+                texto6.hidden=true;
+            }
+            if(contador==2){
+                camiseta9.hidden=true;
+                camiseta11.hidden=true;
+                camiseta6.hidden=false;
+                texto9.hidden=true;
+                texto11.hidden=true;
+                texto6.hidden=false;
+            }
+        });
+        botonAtras.addEventListener("click",function(){
+            contador--;
+            if(contador<0){
+                contador=2;
+            }
+            if(contador==0){
+                camiseta9.hidden=false;
+                camiseta11.hidden=true;
+                camiseta6.hidden=true;
+                texto9.hidden=false;
+                texto11.hidden=true;
+                texto6.hidden=true;
+            }
+            if(contador==1){
+                camiseta9.hidden=true;
+                camiseta11.hidden=false;
+                camiseta6.hidden=true;
+                texto9.hidden=true;
+                texto11.hidden=false;
+                texto6.hidden=true;
+            }
+            if(contador==2){
+                camiseta9.hidden=true;
+                camiseta11.hidden=true;
+                camiseta6.hidden=false;
+                texto9.hidden=true;
+                texto11.hidden=true;
+                texto6.hidden=false;
+            }
+        });
+
+
+    </script>
+</body>
+</html>
