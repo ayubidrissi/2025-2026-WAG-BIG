@@ -4,11 +4,11 @@ function argazkiaAldatu() {
   var hombre = document.querySelector('img[alt="caraHombre"]');
   var mujer = document.querySelector('img[alt="caraMujer"]');
   if (hombre.hidden) {
-      hombre.hidden = false;
-      mujer.hidden = true;
+    hombre.hidden = false;
+    mujer.hidden = true;
   } else {
-      hombre.hidden = true;
-      mujer.hidden = false;
+    hombre.hidden = true;
+    mujer.hidden = false;
   }
 }
 
@@ -29,7 +29,7 @@ function enviar(event) {
   var gustokoena = [];
   var checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
   for (var i = 0; i < checkboxes.length; i++) {
-      gustokoena.push(checkboxes[i].nextSibling.textContent.trim());
+    gustokoena.push(checkboxes[i].nextSibling.textContent.trim());
   }
   var gustokoenaValue = gustokoena.length > 0 ? gustokoena.join(', ') : 'Ninguno';
 
@@ -52,13 +52,29 @@ function bidali(event) {
   enviar(event);
 }
 
+// Ikaslearen eraikitzailea
+function Estudiante(nombre, edad) {
+  this.nombre = nombre;
+  this.edad = edad;
+  this.asignaturas = [];
+  for (var i = 2; i < arguments.length; i++) {
+    this.asignaturas.push(arguments[i]);
+  }
+}
+
+// Agurtzeko metodoa
+Estudiante.prototype.saludar = function () {
+  console.log("Hola, me llamo " + this.nombre + " y tengo " + this.edad + " años.");
+};
+
+// Ikasgaiak ikusteko metodoa
+Estudiante.prototype.listarAsignaturas = function () {
+  console.log("Mis asignaturas son: " + this.asignaturas.join(', '));
+};
 
 
 
 
 
-       
-        
 
 
-    
