@@ -6,17 +6,18 @@
     <meta name="viewport" content="width=devic
     e-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/ariketa6.css">
+    <script src="../javascript-E6/ariketa6.js"></script>
     <title>Document</title>
 </head>
 
 <body>
      <img src="../img/caraHombre.jpg" alt="caraHombre" >
         <img src="../img/caraMujer.jpg" alt="caraMujer" hidden >
-    <form action="">
+    <form action="" onsubmit="enviar(event)">
         <div class="container">
         <label for="">zuzentzeko era</label>
-        <input type="radio" name="sexua" id="" onclick="cambiarImagen()">Jauna
-        <input type="radio" name="sexua" id="" onclick="cambiarImagen()">Andrea <br><br>
+        <input type="radio" name="sexua" id="jauna" onclick="argazkiaAldatu()">Andrea
+        <input type="radio" name="sexua" id="Andrea" onclick="argazkiaAldatu()">Jauna <br><br>
         <div class="izena">
         <label for="izena">Izena:</label>
         <input type="text" id="izena" name="izena"><br><br>
@@ -27,13 +28,14 @@
         </div>
         <div class="email">
         <label for="text">Helbidea</label>
-        <input type="text" id="text" name="text"><br><br>
+        <input type="text" id="helbidea" name="text"><br><br>
         </div>
         <div class="hiriak">
         <label for="">Hiriak</label>
         <select name="aukeratu" id="aukeratu">
             <option value="aukeratu">aukeratu</option>
-
+            <option value="eibar">eibar</option>
+            <option value="ermua">ermua</option>
         </select>
         <br><br>
         </div>
@@ -43,37 +45,19 @@
         <input type="checkbox" name="" id="Pelikulak">Pelikulak<br><br>
         </div>
         <div class="botoiak">
-        <input type="submit" value="Bidali" id="bidali" name="bidali">
+        <input type="submit" value="Bidali" id="bidali" name="bidali" onclick="bidali()">
 
-        <input type="reset" value="Ezabatu" id="garbitu" name="garbitu">
+        <input type="reset" value="Ezabatu" id="garbitu" name="garbitu" onclick="ezabatu()">
         </div>
         </div>
     </form>
-    <div class="textarea">
+    <div id="textarea"  class="textarea">
 
            <h1>sartu dituzun datuak:</h1>
 
     </div>
 
-    <script>
-      // que al pulsar en jauna salga la imagen del hombre y al pulsar en andrea la de mujer
-      function cambiarImagen() {
-        var hombre = document.querySelector('img[alt="caraHombre"]');
-        var mujer = document.querySelector('img[alt="caraMujer"]');
-        if (hombre.hidden) {
-            hombre.hidden = false;
-            mujer.hidden = true;
-        } else {
-            hombre.hidden = true;
-            mujer.hidden = false;
-        }
-      } 
-
-       
-        
-
-
-    </script>
+    
 
    
 </body>
